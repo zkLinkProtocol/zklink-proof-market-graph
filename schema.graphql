@@ -1,0 +1,18 @@
+type BatchCompletedEntity @entity(immutable: false) {
+  id: String!
+  networkId: Bytes!
+  batchId: Bytes!
+  bidder: Bytes! # address
+  blockStartAt: BigInt!
+  blockEndAt: BigInt!
+  timestamp: Timestamp!
+  rewards: BigInt!
+  transactionHash: Bytes!
+}
+
+type BatchCompletedCountEntity @entity(immutable: false) {
+  id: String!
+  timestamp: Timestamp!
+  totalCount: BigInt!
+  totalRewards: BigInt!
+}

@@ -1,0 +1,22 @@
+{
+  "name": "zk_l3_graph",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "create": "graph create --node http://localhost:8020 proof-market",
+    "deploy": "graph deploy --node http://localhost:8020 --ipfs http://localhost:5001 proof-market",
+    "remove": "graph remove --node http://localhost:8020 proof-market",
+    "create-local": "graph create --node http://localhost:8020/ proof-market",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 proof-market",
+    "remove-local": "graph remove --node http://localhost:8020/ proof-market",
+    "create-dev": "graph create --node https://sepolia.graph.zklink.io/node proof-market",
+    "deploy-dev": "graph deploy --node https://sepolia.graph.zklink.io/node --ipfs https://sepolia.ipfs.zklink.io proof-market",
+    "remove-dev": "graph remove --node https://sepolia.graph.zklink.io/node proof-market"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.89.0",
+    "@graphprotocol/graph-ts": "0.35.1",
+    "prettier": "^3.2.5"
+  }
+}

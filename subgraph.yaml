@@ -1,0 +1,25 @@
+specVersion: 1.2.0
+description: index BatchCompleted event of ProofAuctionMarket contract
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: BatchCompleted
+    network: zklink-nova
+    source:
+      abi: ProofAuctionMarketABI
+      address: '0xcAFC7C2368f58B9cff6a6AcF449337bc47A33C7b'
+      startBlock: 309448
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      file: ./src/index.ts
+      entities:
+        - BatchCompleted
+      abis:
+        - name: ProofAuctionMarketABI
+          file: ./abis/ProofAuctionMarket.json
+      eventHandlers:
+        - event: BatchCompleted(indexed bytes32,indexed bytes32,indexed address,uint256,uint256,uint256)
+          handler: handleBatchCompleted
