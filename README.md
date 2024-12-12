@@ -1,7 +1,8 @@
 # zklink-proof-market-graph
 
 A subgraph for indexing BatchCompleted events from the ZKLink ProofAuctionMarket contract.
-The graphql client site is https://graph.zklink.io/subgraphs/name/proof-market
+
+The GraphQL endpoint for the **Sepolia** testnet is https://sepolia.graph.zklink.io/subgraphs/name/proof-market
 
 ## Overview
 
@@ -27,11 +28,16 @@ This subgraph tracks proof generation events in the ZKLink network, specifically
 ## Deploy
 
 ```sh
-yarn
+# Install dependencies
+yarn install
 
+# Generate TypeScript types from schema
 yarn codegen
 
-yarn create-local
+# Build the subgraph
+yarn build
 
+# Deploy
+yarn create-local
 yarn deploy-local
 ```
