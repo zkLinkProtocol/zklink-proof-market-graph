@@ -3,7 +3,7 @@ import { BatchCompletedEntity, BatchCompletedCountEntity } from '../generated/sc
 import { BigInt } from '@graphprotocol/graph-ts';
 
 export function handleBatchCompleted(event: BatchCompleted): void {
-  let entity = new BatchCompletedEntity(event.params.blockStartAt.toString());
+  let entity = new BatchCompletedEntity(event.params.batchId.toString());
   entity.networkId = event.params.networkId;
   entity.batchId = event.params.batchId;
   entity.bidder = event.params.bidder;
